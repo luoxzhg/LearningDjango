@@ -1,0 +1,17 @@
+{% extends 'contacts/base.html' %}
+
+{% block content %}
+<h1>Contact</h1>
+
+<ul>
+{% for contact in object_list %}
+	<li class='contact'>
+		<a href="{{contact.get_absolute_url}}">{{ contact }}</a>
+		(<a href="{% url "contacts:contacts-edit" pk=contact.pk %}">edit</a>)
+		(<a href="{% url "contacts:contacts-delete" pk=contact.pk %}">delete</a>)
+	</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'contacts:contacts-new' %}">add contact</a>
+{% endblock %}
