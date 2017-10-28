@@ -18,12 +18,15 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin, auth
 
+from search import views as search_views
 
 urlpatterns = [
-    url(r'^account/', include('django.contrib.auth.urls')),
-    
     url(r'^polls/', include('polls.urls')),
     url(r'^contacts/', include('contacts.urls')),
+    url(r'^search/$', search_views.search, name='search'),
+
+    url(r'^account/', include('django.contrib.auth.urls')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', admin.site.urls),
 ]
 

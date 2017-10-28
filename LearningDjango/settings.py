@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,8 +42,10 @@ INSTALLED_APPS = [
 
     'polls.apps.PollsConfig',
     'contacts.apps.ContactsConfig',
+    'search.apps.SearchConfig',
 ]
 
+#Use 'django.contrib.sites.middleware.CurrentSiteMiddleware' instead
 SITE_ID = 1
 
 MIDDLEWARE = [
